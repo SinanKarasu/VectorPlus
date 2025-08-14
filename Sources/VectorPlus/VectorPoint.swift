@@ -72,21 +72,10 @@ public extension VectorPoint {
     /// `Point(x: 25, y: 25)` would translate to `Point(x: -25, y: 25)`.
     static func cartesianPoint(for point: Point, in rect: Rect) -> Point {
         let origin = Point(x: rect.size.width / 2.0, y: rect.size.height / 2.0)
-        var cartesianPoint: Point = .zero
-        
-        if point.x < origin.x {
-            cartesianPoint.x = -(origin.x - point.x)
-        } else if point.x > origin.x {
-            cartesianPoint.x = point.x - origin.x
-        }
-        
-        if point.y > origin.y {
-            cartesianPoint.y = -(point.y - origin.y)
-        } else if point.y < origin.y {
-            cartesianPoint.y = origin.y - point.y
-        }
-        
-        return cartesianPoint
+		return Point(
+			x: point.x - origin.x,
+			y: origin.y - point.y
+		)
     }
 }
 
