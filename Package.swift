@@ -5,13 +5,14 @@ import PackageDescription
 
 let package = Package(
     name: "VectorPlus",
-    platforms: [
-        .macOS(.v12),
-        .macCatalyst(.v15),
-        .iOS(.v15),
-        .tvOS(.v15),
-        .watchOS(.v8),
-    ],
+	platforms: [
+		.macOS(.v13),
+				.macCatalyst(.v15),
+				.iOS(.v16),
+				.tvOS(.v16),
+				.watchOS(.v9),
+				.visionOS(.v1),
+		],
     products: [
         .executable(
             name: "vectorplus",
